@@ -1,1 +1,7 @@
 <h2>Products</h2>
+
+<div *ngFor="let product of products">
+    <h3>{{product.name}}</h3>
+</div>
+
+<!-- Tip: *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. Any directive with an * is a structural directive. -->
