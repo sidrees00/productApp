@@ -1,7 +1,27 @@
 <h2>Products</h2>
 
 <div *ngFor="let product of products">
-    <h3>{{product.name}}</h3>
+  <h3>
+    <a [title]="product.name  + ' details'">
+      {{product.name}}
+    </a>
+  </h3>
 </div>
 
-<!-- Tip: *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. Any directive with an * is a structural directive. -->
+<!-- 
+  Notes: 
+  
+  1) *ngFor is a "structural directive". Structural directives shape or reshape the DOM's structure, typically by adding, removing, and manipulating the elements to which they are attached. Any directive with an * is a structural directive.
+
+  2) When you put an anchor within a heading, the anchor will adopt the styles of the heading.
+
+  3) Interpolation looks for the specified property value on the class and returns its string value.  
+  
+  4) Template expression = anything within " " inside of an HTML or template file.
+  
+  5) Property binding [], lets you use the property value within a template expression.  
+  
+  6) The above title attribute can also be defined as: title="{{product.name}} details".
+
+-->
+
