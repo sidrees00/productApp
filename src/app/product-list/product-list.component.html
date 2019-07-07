@@ -1,9 +1,9 @@
 <h2>Products</h2>
 
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
   
   <h3>
-    <a [title]="product.name  + ' details'">
+    <a [title]="product.name  + ' details'" [routerLink]="['/products', productId]">
       {{product.name}}
     </a>
   </h3>
@@ -37,6 +37,10 @@
   5) Property binding [], lets you use the property value within a template expression.  
   
   6) The above title attribute can also be defined as: title="{{product.name}} details".
+
+  7) The routerLink defines how the user navigates to the route (or URL) declaratively in the component template.
+
+  8) The RouterLink directive gives the router control over the anchor element. In this case, the route (URL) contains one fixed segment (/products) and the final segment is variable, inserting the id property of the current product.
 
 -->
 
