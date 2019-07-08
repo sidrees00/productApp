@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from '../cart.service'
 
 @Component({
   selector: 'app-cart',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  items;
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) {
+    this.items = cartService.getItems();
+   }
 
   ngOnInit() {
   }
 
 }
+
+/*
+Notes:
+
+1) Using a service consists of 2 steps:
+  a) Importing service
+  b) Injecting service into constructor
+*/
