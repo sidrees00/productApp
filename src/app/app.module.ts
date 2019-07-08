@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -14,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent },
@@ -31,3 +34,15 @@ import { CartComponent } from './cart/cart.component';
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
+
+/*
+Notes:
+
+1) This file contains imports and functionality that is available to the entire app.
+
+2) Adding HttpClientModule to the imports array here registers Angular's HttpClient providers globally.
+
+3) Alternatively, the HttpClient service is what you inject into your services to fetch data and interact with external APIs and resources.
+
+
+*/
